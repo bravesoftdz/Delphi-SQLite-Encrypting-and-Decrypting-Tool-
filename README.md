@@ -73,13 +73,13 @@ FDConnection1.Connected := False;
 
 FDConnection1.DriverName := 'sqlite';
 
-FDConnection1.Params.FDd('DriverID=' + DriverID);
+FDConnection1.Params.add('DriverID=' + DriverID);
 
-FDConnection1.Params.FDd('Database= ' + DBpath);
+FDConnection1.Params.add('Database= ' + DBpath);
 
-FDConnection1.Params.FDd('Encrypt = aes-256');
+FDConnection1.Params.add('Encrypt = aes-256');
 
-FDConnection1.Params.FDd('password=aes-256:1234'); //1234 is the encrypted
+FDConnection1.Params.add('password=aes-256:1234'); //1234 is the encrypted
 password. Best to use a strong Encryption Key in Production.
 
 FDPhysSQLiteDriverLink1.DriverID := DriverID;
@@ -90,30 +90,30 @@ FDSQLiteSecurity1.DriverLink := FDPhysSQLiteDriverLink1;
 
 FDSQLiteSecurity1.Password := 'aes-256:1234';//1234 is the encrypted password
 
-FDConnection1.Params.FDd('OpenMode = CreateUTF16');
+FDConnection1.Params.add('OpenMode = CreateUTF16');
 
-FDConnection1.Params.FDd('JournalMode = WAL');
+FDConnection1.Params.add('JournalMode = WAL');
 
-FDConnection1.Params.FDd('LockingMode = Exclusive');//do not want anyone else
+FDConnection1.Params.add('LockingMode = Exclusive');//do not want anyone else
 connecting at same time.
 
-FDConnection1.Params.FDd('BusyTimeout = 5000');
+FDConnection1.Params.add('BusyTimeout = 5000');
 
-FDConnection1.Params.FDd('CacheSize = 10000');
+FDConnection1.Params.add('CacheSize = 10000');
 
-FDConnection1.Params.FDd('SharedCache = False');
+FDConnection1.Params.add('SharedCache = False');
 
-FDConnection1.Params.FDd('Synchronous = Off');
+FDConnection1.Params.add('Synchronous = Off');
 
-FDConnection1.Params.FDd('ForeignKeys = Off');
+FDConnection1.Params.add('ForeignKeys = Off');
 
-FDConnection1.Params.FDd('StringFormat = Choose');
+FDConnection1.Params.add('StringFormat = Choose');
 
-FDConnection1.Params.FDd('GUIDFormat = String');
+FDConnection1.Params.add('GUIDFormat = String');
 
-FDConnection1.Params.FDd('DateTimeFormat = String');
+FDConnection1.Params.add('DateTimeFormat = String');
 
-FDConnection1.Params.FDd('Extentions = False');
+FDConnection1.Params.add('Extentions = False');
 
 FDConnection1.Connected := True;
 
